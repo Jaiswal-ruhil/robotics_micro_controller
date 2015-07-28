@@ -1,0 +1,2 @@
+
+Fritzing is an open-source tool to work creatively with interactive electronics. Its a tool that allows users to document their prototypes, share them with others, and to create a pcb layout for professional manufacturing.
