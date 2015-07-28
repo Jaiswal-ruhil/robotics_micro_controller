@@ -1,0 +1,25 @@
+
+
+**make sure thet the microcontroller u want to program, is supplied a clock and a power supply 
+
+
+steps involved:
+
+1: open arduino ide
+2: from the tools menu select the relative aurdino board
+3: select the relative port (from tools)
+4: tools -> programmer select arduino as isp
+5: from files -> examples burn the program ArduinoISP on to the board
+
+6: unplug and make the following connections--
+
+pin-arduino             microcontroller
+13			19
+12			18
+11			17
+10			1  (reset pin)
+
+
+7: now select the kind of chip u want to burn in tools-> board
+8a: select bootloader if u want to burn a boot loader
+8b: if u want to upload a code just hold shift and uplaod the code (saya upload code using arduino as isp)
