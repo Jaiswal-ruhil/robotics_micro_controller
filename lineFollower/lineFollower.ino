@@ -26,15 +26,28 @@ void rotate(int pin1,int pin2,int en,int frqh,int frql) {
   digitalWrite(en,HIGH);
 }
 
+int num = 0;
+
 void loop() {
-  if( digitalRead(LL) == HIGH ) 
-    rotate(MA1,MA2,EN1,240,0);
-  else
-    rotate(MA2,MA1,EN1,180,0);
+  num = digitalRead(LL) << 1;
+  num |= digitalRead(LR);
 
-  if( digitalRead(LR) == HIGH ) 
-    rotate(MB1,MB2,EN2,240,0);
-  else
-    rotate(MB2,MB1,EN2,180,0);
-
+  switch( num ) {
+    case 2:
+      rotate(MA2,MA1,EN1,180,0);
+      rotate(MB1,MB2,EN1,240,0);
+      break;
+    case 1:
+      rotate(MB2,MB1,EN2,180,0);
+      rotate(MA1,MA2,EN2,240,0);
+      break;
+    case 3:
+      rotate(MB1,MB2,EN2,0,0);
+      rotate(MA1,MA2,EN2,0,0);
+      break;
+    case 0:
+      rotate(MA1,MA2,EN2,240,0);
+      rotate(MB1,MB2,EN1,240,0);
+      break;
+  }
 }
